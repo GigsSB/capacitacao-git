@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: white;
 }
 
 div {
@@ -20,6 +20,7 @@ div {
   width: 25%;
   height: 50%;
   border-radius: 10px;
+  border: 1px solid gray;
   background-color: white;
 }
 
@@ -58,7 +59,6 @@ img {
   outline: none;
 }
 
-.login:hover{
-  background-color: blue;
-  border: 10px solid blueviolet;
+.login:hover {
+  opacity: 80%;
 }
