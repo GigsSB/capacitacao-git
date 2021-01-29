@@ -636,6 +636,167 @@ def tournament_ranking():
 
 
 def random_tournament():
+    # Usuário: numero de lutadores que ele quer
+
+    # Lista para seleção aleatória
+    # ListaNomes com 200 nomes
+    belts = ["branca", "amarela", "verde", "laranja", "azul",
+                   "preta", "marrom", "vermelha", "roxa", "coral"]
+    martial = ["jiu jitsu", "muay thai", "judo",
+               "krav maga", "kung fu", "taekwondo", "karate"]
+    names = ['Acacio', 'Jordán'
+                  'Adriano', 'Cintra'
+                  'Alicia', 'Franco'
+                  'Anacleto', 'Valle'
+                  'Anacleto', 'Velásquez'
+                  'Anhangüera', 'Martinho'
+                  'Antônia', 'Carrasco'
+                  'Arminda', 'Cayado'
+                  'Branca', 'Cabral'
+                  'Capitolino', 'Paredes'
+                  'Caubi', 'Castanheira'
+                  'Celestina', 'Salgado'
+                  'Celso', 'Cartaxo'
+                  'Cláudio', 'Malheiros'
+                  'César', 'Dâmaso'
+                  'Delfina', 'Veloso'
+                  'Duarte', 'Belchior'
+                  'Dália', 'Grilo'
+                  'Eduarda', 'Fortunato'
+                  'Eliseu', 'Grillo'
+                  'Ema', 'Betancour'
+                  'Emanuel', 'Javier'
+                  'Epifânia', 'Rivero'
+                  'Ernesto', 'Lousã'
+                  'Esmeralda', 'Bentes'
+                  'Eunice', 'Franco'
+                  'Eusébio', 'Barrios'
+                  'Eva', 'Tristão'
+                  'Ezequiel', 'Butantã'
+                  'Fabíola', 'Ruela'
+                  'Fausto', 'Carvalheira'
+                  'Felicidade', 'Onofre'
+                  'Felícia', 'Bautista'
+                  'Filena', 'Nieto'
+                  'Firmino', 'Nunes'
+                  'Flor', 'Ramalho'
+                  'Flávio', 'Baranda'
+                  'Frederico', 'Marcondes'
+                  'Frutuoso', 'Carvalheira'
+                  'Félix', 'Quadros'
+                  'Garibaldo', 'Escobar'
+                  'Gastão', 'Brandán'
+                  'Gil', 'Curado'
+                  'Gilberto', 'Antúnez'
+                  'Godo', 'Penteado'
+                  'Guilhermina', 'Regalado'
+                  'Heloísa', 'Grande'
+                  'Heloana', 'Herrera'
+                  'Honório', 'Piragibe'
+                  'Humberto', 'Barrios'
+                  'Irani', 'Fernández'
+                  'Itiberê', 'Melgaço'
+                  'Jordão', 'Eanes'
+                  'João', 'Carvajal'
+                  'Juliano', 'Villas'
+                  'Jónatas', 'Cuaresma'
+                  'Liliana', 'Espartero'
+                  'Lorena', 'Correia'
+                  'Luciano', 'Foquiço'
+                  'Luciano', 'Jaguaribe'
+                  'Manuela', 'Betancour'
+                  'Marli', 'Vega'
+                  'Martim', 'Carrilho'
+                  'Matias', 'Hierro'
+                  'Mauro', 'Tomé'
+                  'Micaela', 'Amorín'
+                  'Micaela', 'Igrejas'
+                  'Moema', 'Gomes'
+                  'Odilia', 'Varanda'
+                  'Olga', 'Naves'
+                  'Otávio', 'Guedes'
+                  'Palmira', 'Lira'
+                  'Piedade', 'Simões'
+                  'Querubim', 'Lacerda'
+                  'Querubina', 'Estrada'
+                  'Regina', 'Ferraz'
+                  'Rita', 'Quintana'
+                  'Rogério', 'Baldaia'
+                  'Roquita', 'Quadros'
+                  'Rosalina', 'Pajares'
+                  'Salomé', 'Querino'
+                  'Sancho', 'Batista'
+                  'Sara', 'Lagos'
+                  'Serafim', 'Coito'
+                  'Solano', 'Ipanema'
+                  'Soraia', 'Athayde'
+                  'Susana', 'Sabala'
+                  'Sérgio', 'Rosmaninho'
+                  'Trajano', 'Ruela'
+                  'Tália', 'Malta'
+                  'Ubiratã', 'Torrado'
+                  'Ulrico', 'Lucena'
+                  'Vanda', 'Linares'
+                  'Veridiano', 'Amarante'
+                  'Veríssimo', 'Frota'
+                  'Ximeno', 'Freire'
+                  'Xénia', 'Sobreira'
+                  'Zara', 'Clementino'
+                  'Zeferino', 'Pádua'
+                  'Zita', 'Silveira']
+
+    fighter_qtd = random.randint(0, 180)
+    '''nlutadore'''
+    ok = False
+    while(ok == False):
+        try:
+            nLutadores = int(nLutadores)
+            ok = True
+            if(nLutadores > 10000):
+                print("Número excede o limite(10000), tente novamente")
+                ok = False
+                nLutadores = 'a'
+        except:
+            print("\nNúmero inválido\n")
+
+            nLutadores = input("Insira o número de lutadores: ")
+    for i in range(fighter_qtd):
+        r_fighter=random.choice(names).capitalize()
+        del names[index(r_fighter)]
+        r_age=random.randint(15,70)
+        r_weight=round(random.randint(50,120))
+        r_strength=random.randint(1,100)
+        r_belt=random.choice(belts).capitalize()
+        r_style=random.choice(martial).capitalize()
+        r_code=i
+        fighter = Fighter(r_fighter, r_age, r_weight, r_strength, r_belt, r_style, r_code)
+        fighters.append(fighter)
+
+    name_t='Torneio Aleatório'
+    style_t=random.choice(martial)
+    weight_list,belt_list=[],[]
+    weight_qtd=random.randint(1,8)
+    code_t=0
+    for i in range(weight_qtd):
+        weight_min = round(
+                float(random.randint(50,120)))
+        weight_max = round(
+                float(random.randint(50,120)))
+        if weight_min > weight_max:
+            weight = [weight_max, weight_min]
+        else:
+            weight = [weight_min, weight_max]
+        weight_list.append(weight)
+        belt_t=random.choice(belts).capitalize()
+        belt_list.append(belt)
+    tournament = Tournament(name, weight_list, belt_list, style_t, code_t)
+    tournaments.append(tournament)
+    fight
+    for i in range(len(r_fighter)):
+
+
+    
+
     return 'random_tournament()'
     menu_start()
 
