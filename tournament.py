@@ -791,13 +791,18 @@ def random_tournament():
         belt_list.append(belt)
     tournament = Tournament(name, weight_list, belt_list, style_t, code_t)
     tournaments.append(tournament)
-    fight
+    tournament_r=tournaments[code_t]
+    fighter_r=fighters[r_code]
+
     for i in range(len(r_fighter)):
+        fighter_r=fighters[i]
+        if fighter_r.style==tournament_r.style and fighter_r.belt in tournament_r.t_belt and i[1] > fighter.weight and i[0] <= fighter.weight:
+            belt_final=fighter_r.belt   
+            weight_l.append(i)
+            weight_final=weight_l[0]
+            tournament_r.enroll_fighter(fighter_r,belt_final,weight_final)
 
-
-    
-
-    return 'random_tournament()'
+    print('Torneio aleatório criado!')
     menu_start()
 
 
