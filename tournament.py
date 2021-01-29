@@ -353,8 +353,6 @@ def tournament_create():
         else:
             weight = [weight_min, weight_max]
         weight_list.append(weight)
-        '''print(weight)
-        print(weight_list)'''
     while check:
         try:
             belt_qtd = int(
@@ -365,8 +363,6 @@ def tournament_create():
     for i in range(belt_qtd):
         belt = (input("Defina a cor da faixa. ")).capitalize()
         belt_list.append(belt)
-        print(belt_list)
-
     t_code = len(tournaments)
     tournament = Tournament(name, weight_list, belt_list, style, t_code)
     tournaments.append(tournament)
@@ -464,6 +460,7 @@ NOME \t           CÓDIGO DE TORNEIO\033[0m''')
 {sep2}''')
     print(f"{sep}")
     menu_tournament()
+
 
 def show_enrolled_fighters():
     sep = "-="*20
