@@ -636,10 +636,7 @@ def tournament_ranking():
 
 
 def random_tournament():
-    # Usuário: numero de lutadores que ele quer
-
-    # Lista para seleção aleatória
-    # ListaNomes com 200 nomes
+    
     belts = ["branca", "amarela", "verde", "laranja", "azul",
                    "preta", "marrom", "vermelha", "roxa", "coral"]
     martial = ["jiu jitsu", "muay thai", "judo",
@@ -746,20 +743,8 @@ def random_tournament():
                   'Zita', 'Silveira']
 
     fighter_qtd = random.randint(0, 180)
-    '''nlutadore'''
-    ok = False
-    while(ok == False):
-        try:
-            nLutadores = int(nLutadores)
-            ok = True
-            if(nLutadores > 10000):
-                print("Número excede o limite(10000), tente novamente")
-                ok = False
-                nLutadores = 'a'
-        except:
-            print("\nNúmero inválido\n")
-
-            nLutadores = input("Insira o número de lutadores: ")
+    
+    
     for i in range(fighter_qtd):
         r_fighter=random.choice(names).capitalize()
         del names[index(r_fighter)]
